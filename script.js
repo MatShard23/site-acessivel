@@ -1,35 +1,130 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade')
-    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade')
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    botaoDeAcessibilidade.addEventListener('click', function () {
-        botaoDeAcessibilidade.classList.toggle('rotacao-botao');
-        opcoesDeAcessibilidade.classList.toggle('apresenta-lista')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Tropicália</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-    })
+<body>
+    <header class=" p-5">
 
-    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+        <nav class="container d-flex justify-content-between align-items-center">
+            <img src="img/logo.png" alt="Logotipo da Tropicália" class="nav-img " loading="lazy">
+            <ul class="nav mt-5">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>      
 
-    const alternaContraste = document.getElementById('alterna-contraste')
-
-    let tamanhoAtualFonte = 1;
-
-    aumentaFonteBotao.addEventListener('click', function () {
-        tamanhoAtualFonte += 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`
-
-    })
-
-    diminuiFonteBotao.addEventListener('click', function () {
-        tamanhoAtualFonte -= 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`
-
-    })
-
-    alternaContraste.addEventListener('click', function () {
-        document.body.classList.toggle('alto-contraste')
-    })
+            <div id="acessibilidade" class="menu-acessibilidade">
+                <button id="botao-acessibilidade" class="btn btn-primary rotacao-botao fw-bold">Acessibilidade</button>
+                <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+                <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-lebel="aumentar o tamanho da fonte">A+</button> 
+                <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-lebel="diminuir o tamanho da fonte">A-</button>
+                <button id="alterna-contraste" class="btn btn-primary fw-bold"> <i class="bi bi-shadows"></i></button>
+                <div>
+            </div>    
+        </nav>
+       
+    </header>
 
 
-})
+    <main class="container my-5">
+
+        <section id="inicio" class="my-5">
+            <div class="inicio-fundo d-flex justify-content-between align-items-center">
+                <div class="esquerda-conteudo">
+                    <h1 class="display-4 text-white fst-italic fw-bold">Boas-vindas a</h1>
+                    <img src="img/logo-2.png" alt="Logotipo secundário da Tropicália" class="mb-3" width="563"
+                        height="278" loading="lazy">
+                    <a href="#tropicalia"
+                        class="btn btn-primary btn-lg botao-inicio fw-semibold">Quero
+                        conhecer!</a>
+                </div>
+                <img src="img/lossy-page1-640px-Os_Mutantes.tif (1).png" alt="A imagem apresenta o grupo musical Os 
+                mutantes, sao tres pessoas cantando em um microfone" title="Os mutantes - CCO Domínio Público / Acervo
+                Arquivo Nacional" class="img-fluid img-inicio">
+
+            </div>
+        </section>
+
+        <section id="tropicalia" class="my-5 pt-6 secao-tropicalia" tabindex="0" aria-label="seção explicativa sobre a tropicalia">
+             <div class="container d-flex align-items-center ">
+                  <div class="col-5">
+                    <h2>O que foi a Tropicália?</h2>
+                    <p class="p-2">A Tropicalia, tambem conhecida como tropicalismo, foi um movimento cultural brasileiro que aconteceu nos anos de 1960, mas que teve
+                        seu auge em 1967 e 1968. Ela se caracterizou pela fusão dos elementos da cultura brasileira com influências estrangeiras,
+                        especialmente do rock e pop, e se envolveu em diversas manifestações artísticas como música, cinema, teatro e artes plásticas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" tabindex="0" aria-label="seção de galeria de imagens">
+            <h2 class="text-center pt-5">Galeria</h2>
+            <div class="container p-3 mt-3 fundo-galeria ">
+
+                <div class="row justify-content-md-center">
+                    <div class="col-md-4">
+                        <img src="img/lossy-page1-640px-Jorge_Ben_e_o_Trio_Mocotó_no_Teatro_da_Lagoa,_1971.tif.jpg"
+                         alt="A imagem apresenta o Trio Mocotó, com o cantor Jorge Ben no meio deles, performando no Teatro da Lagoa"
+                         title="Trio Mocotó - CCO Domínio Púbico / Acervo Arquivo Nacional"
+                          class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/lossy-page1-640px-Os_Mutantes_2.tif.jpg" alt="A imagem mostra o grupo Os Mutantes fazendo
+                        sua perfomance em um palco" title="Os Mutantes - CCO Domínio Púbico / Acervo Arquivo Nacional" 
+                        class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container p-5 d-flex justify-content-center">
+                <div class="col-md-8 col-lg-10 rounded-5 formulario"> <!-- Caixa do formulário com 60% de largura -->
+                    <h2 class="mb-3">Entre em contato</h2>
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1"
+                                placeholder="Digite seu nome completo">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1"
+                                placeholder="Digite seu email">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4"
+                                placeholder="Escreva sua mensagem"></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill tamanho-botao">Enviar
+                                mensagem</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="text-center p-3 fst-italic">
+        <p>Acesse nossas redes:</p>
+        <i class="bi bi-whatsapp"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-tiktok"></i>
+        <p class="mt-3">Desenvolvido por Start by Alura. Projeto fictício sem fins comerciais.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
